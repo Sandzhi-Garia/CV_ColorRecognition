@@ -18,26 +18,20 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0){
-    char recieved = Serial.read();
+    String recieved = Serial.readStringUntil('\n');
+  int pins[4] = {BLUE, YELLOW, GREEN, RED};
 
   digitalWrite(RED, LOW);
   digitalWrite(YELLOW, LOW);
   digitalWrite(GREEN, LOW);
   digitalWrite(BLUE, LOW);
 
-  switch (recieved) {
-    case 'R': digitalWrite(RED, HIGH); break;
-    case 'Y': digitalWrite(YELLOW, HIGH); break;
-    case 'G': digitalWrite(GREEN, HIGH); break;
-    case 'B': digitalWrite(BLUE, HIGH); break;
-    case 'N':
-      digitalWrite(RED, LOW);
-      digitalWrite(YELLOW, LOW);
-      digitalWrite(GREEN, LOW);
-      digitalWrite(BLUE, LOW);
-      break;
-  }
+  for (int i = 0; i <4; i++){
+    if (recieved[i] =='1'){
+      digitalWrite(pins[i], HIGH);
+    }
 
   }
   }
+}
 
