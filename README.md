@@ -13,5 +13,5 @@ The folder contains two .py files:
 How to run:
 1. Upload 'Nano_LEDS_for_CV.ino' to Arduino Nano
 2. Connect LEDs to pins 9 (Red), 10 (Green), 11 (Blue), 6 (Yellow)
-3. Update `COM` port in `Arduino_main.py`
+3. Update 'COM' port in 'Arduino_main.py'
 4. Run the file
